@@ -1,0 +1,1 @@
+# harness-java-k8s-ccm-autostopping
