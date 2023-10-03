@@ -1,0 +1,17 @@
+{{- if .Values.enablegkeingress -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gabs-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /app
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ include "java-k8s-ccm-autostopping.fullname" . }}
+            port:
+              number: {{ .Values.service.port }}
+{{- end }}
