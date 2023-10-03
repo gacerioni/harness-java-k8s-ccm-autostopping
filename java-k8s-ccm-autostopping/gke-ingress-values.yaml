@@ -3,7 +3,12 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-enablegkeingress: true
+
+createNamespace: true
+namespace: <+infra.namespace>
+
+enablegkeingress: false
+enablegkenginxingress: true
 
 image:
   repository: gacerioni/harness-anbu-demo
